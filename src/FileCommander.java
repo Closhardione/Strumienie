@@ -26,6 +26,11 @@ public class FileCommander {
             return stream.sorted((p1,p2) -> p1.compareTo(p2))
                     .sorted((p1,p2) -> Boolean.compare(Files.isDirectory(p2),Files.isDirectory(p1)))
                     .map((p) -> {
+//                        if(filter!=null){
+//                            if(p.toString().contains(filter)&& decorator.equals(FileCommander::decoratorBracets)){
+//                                return decorator.apply(p.getFileName().toString());
+//                            }
+//                        }
                         if(Files.isDirectory(p)){
                             return decorator.apply(p.getFileName().toString());
                         }
